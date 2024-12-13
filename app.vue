@@ -2,9 +2,7 @@
  <NuxtLayout>
 
 <NuxtPage/>
-<Icon name="ri:subtract-line"    class="iconee"/>
 
- <span> <Icon name="uil:github" style="color: black" /></span>
 
  </NuxtLayout>
 </template>

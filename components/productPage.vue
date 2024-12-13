@@ -28,9 +28,9 @@
       
 </div>
  
-<div >
+<div class="removeitem" >
      
-     <img src="@/public/images/icon-remove-item.svg" alt=""  @click="useStore.removeCartElement(id)">
+     <img src="@/public/images/icon-remove-item.svg" alt=""  @click="useStore.removeCartElement(id)"  >
  </div>
 
 </div>
@@ -165,8 +165,11 @@ padding:20px;
     }
     ul {
         display: flex;
+        align-items: center;
+       
+       
         gap:45px;
-        margin-bottom:9px;
+         margin-bottom:px;
         li{
             list-style:none;
             font-size: 18px;
@@ -192,6 +195,7 @@ padding:20px;
         display:flex;
         align-items: center;
         justify-content: space-between;
+    
         img{
             border: 1PX SOLID gray;
             padding:5px;
@@ -212,6 +216,37 @@ padding:20px;
         h4{
             font-size:14px;
         }
+
+
+        .number{
+        font-size:15px ;
+    }
+    .price{
+        font-size:15px ;
+    }
+    .total{
+        font-size:15px ;
+    }
+
+
+    }
+
+    .removeitem{
+        img{
+            height: 18px;
+          
+        }
+    }
+
+
+
+
+
+    ul {
+     
+    
+         margin-bottom:4px;
+  
     }
 }
 

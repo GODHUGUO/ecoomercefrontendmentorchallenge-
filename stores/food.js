@@ -167,7 +167,6 @@ actions:{
     removeCartElement(id){
 
 
-        
         this.cart.forEach((product)=>{
           
             this.cart.splice(id,1);
