@@ -19,8 +19,7 @@
           v-for="product in useStore.tableauProduit"
           :key="product.id">
         
-     <img :src="product.image.desktop" alt="Image"   class="productimage"/>
-          
+     <img :src="product.image.desktop" alt="Image"   class="productimage"/>   
           <div class="SP">
        
              <div v-if="!product.isActive" class="essaie">  <button
@@ -104,6 +103,7 @@ useStore.decrement(id);
 const changestate=(id)=>{
   useStore.change(id);
 }
+
 
 
 
@@ -214,7 +214,7 @@ $text-color2: black;
 
     .productimage{
 
-         
+      
          width: 75%;
          border-radius:5px;
          
@@ -223,7 +223,9 @@ $text-color2: black;
     }  
 
 
-
+     .ajoutbordure{
+      border:2px solid #b3512e;
+     }
 
 
 
@@ -256,6 +258,7 @@ $text-color2: black;
             // background-color: red;
             width:25px;
             height:25px;
+          
             
         }
       }

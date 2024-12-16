@@ -136,6 +136,7 @@ state:()=>({
 // Contenu du panier
 cart: [],
 
+
 isPopUpVisible:false,
 
 
@@ -166,12 +167,30 @@ actions:{
 
     removeCartElement(id){
 
+         this.cart = this.cart.filter((producct)=>producct.id !== id);
 
-        this.cart.forEach((product)=>{
+    this.cart.quantity=0;
+       
+         const product = this.tableauProduit.find((p) =>p.id === id);
+
+         if(product){
+            product.isActive=false;
+            product.quantity=1;
+         }
+   console.log(this.cart);
+  
+        //  this.cart.forEach((product)=>{
           
-            this.cart.splice(id,1);
+         
+         
+        //     product.isActive=false;
+        //      this.cart.splice(id,1);
+            
+        
+        //      console.log(this.cart);
+       
            
-        });
+        //  });
      
       
       },
@@ -206,7 +225,10 @@ this.cart.length=0;
              return;
           
             }
-           
+          
+            
+
+
             
             }
             this.cart.push(product)

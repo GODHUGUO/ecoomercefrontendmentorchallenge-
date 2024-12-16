@@ -14,10 +14,10 @@
 <h3>Your cart ({{ useStore.totalProduct }})</h3>
 
 
-<div v-for="product,id in cart" :key="product.id" >
+<div v-for="product in cart" :key="product.id" >
     <h4>{{product.name}}</h4>
     <div class="eachproduct">
-<div>
+<div class="left">
     <ul >
             <li class="number">{{ product.quantity}}x</li>
             <li class="price">@${{product.price}}</li>
@@ -30,7 +30,7 @@
  
 <div class="removeitem" >
      
-     <img src="@/public/images/icon-remove-item.svg" alt=""  @click="useStore.removeCartElement(id)"  >
+     <img src="@/public/images/icon-remove-item.svg" alt=""   @click="useStore.removeCartElement(product.id)"  >
  </div>
 
 </div>
@@ -54,7 +54,7 @@
 
 </p>
 
-<div class="confirmorder"   @click="useStore.changePopupState"           >Confirm Order</div>
+<div class="confirmorder"   @click="useStore.changePopupState">Confirm Order</div>
 <div>
 
 </div>
@@ -137,7 +137,10 @@ $text-color2: black;
 
 }
 
-
+.left{
+ 
+    width:30%;
+}
 
 
 .confirmorder{
@@ -154,7 +157,7 @@ $text-color2: black;
     background-color:#ffffff;
     display: flex;
     flex-direction:column;
-    // align-items:center;
+
 padding:20px;
     h3{
         font-weight: bold;
@@ -166,10 +169,11 @@ padding:20px;
     ul {
         display: flex;
         align-items: center;
+       justify-content:space-between;
+    
        
-       
-        gap:45px;
-         margin-bottom:px;
+ 
+    
         li{
             list-style:none;
             font-size: 18px;
@@ -195,7 +199,7 @@ padding:20px;
         display:flex;
         align-items: center;
         justify-content: space-between;
-    
+    // background-color: blue;
         img{
             border: 1PX SOLID gray;
             padding:5px;
@@ -239,14 +243,21 @@ padding:20px;
     }
 
 
+ .left{
+
+  width: 53%;}
 
 
 
     ul {
      
-    
-         margin-bottom:4px;
+       margin-right: 9px;
   
+    
+       
+      
+  
+       
     }
 }
 
@@ -266,7 +277,7 @@ import { useUserStore } from "@/stores/food.js";
 
 const useStore = useUserStore();
 
-const cart = useStore.cart;
+const cart = computed(()=>useStore.cart) ;
 
 
 
